@@ -1,4 +1,5 @@
 import  requests
+import urllib
 #import get_user_id from get_user_id file
 from get_user_id import get_user_id
 #import access token and basic url from constansts file
@@ -13,7 +14,10 @@ def get_user_post(insta_username):
     user_media = requests.get(request_url).json()
     if user_media['meta']['code'] == 200:
         if len(user_media['data']):
-            return user_media['data'][0]['id']
+            image_name = user_media['data'][0]['id'] + '.jpeg'
+            image_url = user_media['data'][0]['images']['standard_resolution']['url']
+            urllib.urlretrieve(image_url, image_name)
+            print 'Your image has been downloaded!'
         else:
             print "There is no recent post!"
     else:
