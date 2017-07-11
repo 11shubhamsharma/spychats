@@ -1,3 +1,4 @@
+# import the all function
 from self_info import self_info
 from  delete_negative_comment import  delete_negative_comment
 from get_own_post import get_own_post
@@ -22,7 +23,7 @@ def start_bot():
         print ("7.Delete negative comments from the recent post of a user\n")
         print ("8.using hash tag for comment\n")
         print ("9.Exit")
-
+     # calling all the function below
         choice = raw_input("Enter you choice: ")
         if choice == "1":
             self_info()
