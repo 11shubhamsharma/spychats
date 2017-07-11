@@ -7,6 +7,7 @@ from get_user_info import get_user_info
 from get_user_post import get_user_post
 from like_a_post import like_a_post
 from post_a_comment import post_a_comment
+from hashtag import analyse_user
 def start_bot():
     while True:
         print ('\n')
@@ -19,7 +20,8 @@ def start_bot():
         print ("5.Like the recent post of a user\n")
         print ("6.Make a comment on the recent post of a user\n")
         print ("7.Delete negative comments from the recent post of a user\n")
-        print ("8.Exit")
+        print ("8.using hash tag for comment\n")
+        print ("9.Exit")
 
         choice = raw_input("Enter you choice: ")
         if choice == "1":
@@ -41,9 +43,14 @@ def start_bot():
            insta_username = raw_input("Enter the username of the user: ")
            post_a_comment(insta_username)
         elif choice=="7":
+
            insta_username = raw_input("Enter the username of the user: ")
            delete_negative_comment(insta_username)
-        elif choice == "8":
+        elif choice=="8":
+           insta_username = raw_input("Enter the username of the user: ")
+           analyse_user(get_user_id(insta_username))
+
+        elif choice == "9":
             exit()
         else:
             print "wrong choice"

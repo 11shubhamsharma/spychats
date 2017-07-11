@@ -18,4 +18,4 @@ def get_own_post():
           print 'Post does not exist!'
   else:
       print 'Status code other than 200 received!'
-  return None
+  #return
